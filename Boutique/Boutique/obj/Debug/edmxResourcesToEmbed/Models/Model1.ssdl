@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlineBoutiqueModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Carts">
+    <Key>
+      <PropertyRef Name="c_id" />
+    </Key>
+    <Property Name="c_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="sp_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Designers">
+    <Key>
+      <PropertyRef Name="ds_id" />
+    </Key>
+    <Property Name="ds_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="ds_name" Type="varchar" MaxLength="50" />
+    <Property Name="ds_category" Type="varchar" MaxLength="50" />
+    <Property Name="ds_rating" Type="int" />
+    <Property Name="ds_feedback" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Group_Members">
+    <Key>
+      <PropertyRef Name="gm_id" />
+    </Key>
+    <Property Name="gm_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="g_id" Type="int" />
+    <Property Name="gm_name" Type="varchar" MaxLength="50" />
+    <Property Name="gm_gender" Type="varchar" MaxLength="50" />
+    <Property Name="gm_agegroup" Type="varchar" MaxLength="50" />
+    <Property Name="gm_length" Type="int" />
+    <Property Name="gm_width" Type="int" />
+    <Property Name="gm_shoulder_len" Type="int" />
+    <Property Name="gm_sleeve_len" Type="int" />
+    <Property Name="gm_collor" Type="int" />
+    <Property Name="gm_full_len" Type="int" />
+    <Property Name="gm_chest" Type="int" />
+    <Property Name="gm_bottom" Type="int" />
+    <Property Name="gm_ankle_len" Type="int" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="g_id" />
+    </Key>
+    <Property Name="g_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="g_name" Type="varchar" MaxLength="50" />
+    <Property Name="g_type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Product_Orders">
+    <Key>
+      <PropertyRef Name="po_id" />
+    </Key>
+    <Property Name="po_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="fullname" Type="varchar" MaxLength="50" />
+    <Property Name="date" Type="varchar" MaxLength="50" />
+    <Property Name="contactno" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="varchar" MaxLength="50" />
+    <Property Name="city" Type="varchar" MaxLength="50" />
+    <Property Name="zipcode" Type="varchar" MaxLength="50" />
+    <Property Name="p_name" Type="varchar" MaxLength="50" />
+    <Property Name="p_category" Type="varchar" MaxLength="50" />
+    <Property Name="p_description" Type="varchar" MaxLength="50" />
+    <Property Name="p_qty" Type="int" />
+    <Property Name="p_size" Type="varchar" MaxLength="50" />
+    <Property Name="p_price" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Recomended_Products">
+    <Key>
+      <PropertyRef Name="rp_id" />
+    </Key>
+    <Property Name="rp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="po_id" Type="int" />
+    <Property Name="f_email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Stich_Product_Orders">
+    <Key>
+      <PropertyRef Name="spo_id" />
+    </Key>
+    <Property Name="spo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sp_id" Type="int" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="spo_fullname" Type="varchar" MaxLength="50" />
+    <Property Name="spo_date" Type="varchar" MaxLength="50" />
+    <Property Name="spo_contactno" Type="varchar" MaxLength="50" />
+    <Property Name="spo_address" Type="varchar" MaxLength="50" />
+    <Property Name="spo_city" Type="varchar" MaxLength="50" />
+    <Property Name="spo_zipcode" Type="int" />
+    <Property Name="spo_reqstatus" Type="int" />
+  </EntityType>
+  <EntityType Name="Stich_Products">
+    <Key>
+      <PropertyRef Name="sp_id" />
+    </Key>
+    <Property Name="sp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sp_name" Type="varchar" MaxLength="50" />
+    <Property Name="sp_category" Type="varchar" MaxLength="50" />
+    <Property Name="sp_description" Type="varchar" MaxLength="50" />
+    <Property Name="sp_avbqty" Type="int" />
+    <Property Name="sp_image" Type="varchar(max)" />
+    <Property Name="sp_size" Type="varchar" MaxLength="50" />
+    <Property Name="sp_price" Type="int" />
+  </EntityType>
+  <EntityType Name="Unstich_Product_Orders">
+    <Key>
+      <PropertyRef Name="uspo_id" />
+    </Key>
+    <Property Name="uspo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usp_id" Type="int" />
+    <Property Name="uspo_length" Type="int" />
+    <Property Name="uspo_width" Type="int" />
+    <Property Name="uspo_shoulder_len" Type="int" />
+    <Property Name="uspo_sleeve_len" Type="int" />
+    <Property Name="uspo_collor" Type="int" />
+    <Property Name="uspo_full_len" Type="int" />
+    <Property Name="uspo_chest" Type="int" />
+    <Property Name="uspo_bottom" Type="int" />
+    <Property Name="uspo_ankle_len" Type="int" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="gm_id" Type="int" />
+    <Property Name="uspo_req_status" Type="int" />
+    <Property Name="uspo_ds_id" Type="int" />
+    <Property Name="uspo_date" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Unstich_Products">
+    <Key>
+      <PropertyRef Name="usp_id" />
+    </Key>
+    <Property Name="usp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usp_name" Type="varchar" MaxLength="50" />
+    <Property Name="usp_size" Type="int" />
+    <Property Name="usp_category" Type="varchar" MaxLength="50" />
+    <Property Name="usp_description" Type="varchar" MaxLength="250" />
+    <Property Name="usp_avbqty" Type="int" />
+    <Property Name="usp_image" Type="varchar(max)" />
+    <Property Name="usp_price" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_name" Type="varchar" MaxLength="50" />
+    <Property Name="user_email" Type="varchar" MaxLength="50" />
+    <Property Name="user_password" Type="varchar" MaxLength="50" />
+    <Property Name="user_type" Type="int" />
+    <Property Name="user_status" Type="int" />
+  </EntityType>
+  <EntityContainer Name="OnlineBoutiqueModelStoreContainer">
+    <EntitySet Name="Carts" EntityType="Self.Carts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Designers" EntityType="Self.Designers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group_Members" EntityType="Self.Group_Members" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product_Orders" EntityType="Self.Product_Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recomended_Products" EntityType="Self.Recomended_Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stich_Product_Orders" EntityType="Self.Stich_Product_Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stich_Products" EntityType="Self.Stich_Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unstich_Product_Orders" EntityType="Self.Unstich_Product_Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unstich_Products" EntityType="Self.Unstich_Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

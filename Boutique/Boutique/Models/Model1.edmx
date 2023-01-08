@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OnlineBoutiqueModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Carts">
+          <Key>
+            <PropertyRef Name="c_id" />
+          </Key>
+          <Property Name="c_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="sp_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Designers">
+          <Key>
+            <PropertyRef Name="ds_id" />
+          </Key>
+          <Property Name="ds_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="ds_name" Type="varchar" MaxLength="50" />
+          <Property Name="ds_category" Type="varchar" MaxLength="50" />
+          <Property Name="ds_rating" Type="int" />
+          <Property Name="ds_feedback" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Group_Members">
+          <Key>
+            <PropertyRef Name="gm_id" />
+          </Key>
+          <Property Name="gm_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="g_id" Type="int" />
+          <Property Name="gm_name" Type="varchar" MaxLength="50" />
+          <Property Name="gm_gender" Type="varchar" MaxLength="50" />
+          <Property Name="gm_agegroup" Type="varchar" MaxLength="50" />
+          <Property Name="gm_length" Type="int" />
+          <Property Name="gm_width" Type="int" />
+          <Property Name="gm_shoulder_len" Type="int" />
+          <Property Name="gm_sleeve_len" Type="int" />
+          <Property Name="gm_collor" Type="int" />
+          <Property Name="gm_full_len" Type="int" />
+          <Property Name="gm_chest" Type="int" />
+          <Property Name="gm_bottom" Type="int" />
+          <Property Name="gm_ankle_len" Type="int" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="g_id" />
+          </Key>
+          <Property Name="g_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="g_name" Type="varchar" MaxLength="50" />
+          <Property Name="g_type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Product_Orders">
+          <Key>
+            <PropertyRef Name="po_id" />
+          </Key>
+          <Property Name="po_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="fullname" Type="varchar" MaxLength="50" />
+          <Property Name="date" Type="varchar" MaxLength="50" />
+          <Property Name="contactno" Type="varchar" MaxLength="50" />
+          <Property Name="address" Type="varchar" MaxLength="50" />
+          <Property Name="city" Type="varchar" MaxLength="50" />
+          <Property Name="zipcode" Type="varchar" MaxLength="50" />
+          <Property Name="p_name" Type="varchar" MaxLength="50" />
+          <Property Name="p_category" Type="varchar" MaxLength="50" />
+          <Property Name="p_description" Type="varchar" MaxLength="50" />
+          <Property Name="p_qty" Type="int" />
+          <Property Name="p_size" Type="varchar" MaxLength="50" />
+          <Property Name="p_price" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Recomended_Products">
+          <Key>
+            <PropertyRef Name="rp_id" />
+          </Key>
+          <Property Name="rp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="po_id" Type="int" />
+          <Property Name="f_email" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Stich_Product_Orders">
+          <Key>
+            <PropertyRef Name="spo_id" />
+          </Key>
+          <Property Name="spo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sp_id" Type="int" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="spo_fullname" Type="varchar" MaxLength="50" />
+          <Property Name="spo_date" Type="varchar" MaxLength="50" />
+          <Property Name="spo_contactno" Type="varchar" MaxLength="50" />
+          <Property Name="spo_address" Type="varchar" MaxLength="50" />
+          <Property Name="spo_city" Type="varchar" MaxLength="50" />
+          <Property Name="spo_zipcode" Type="int" />
+          <Property Name="spo_reqstatus" Type="int" />
+        </EntityType>
+        <EntityType Name="Stich_Products">
+          <Key>
+            <PropertyRef Name="sp_id" />
+          </Key>
+          <Property Name="sp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sp_name" Type="varchar" MaxLength="50" />
+          <Property Name="sp_category" Type="varchar" MaxLength="50" />
+          <Property Name="sp_description" Type="varchar" MaxLength="50" />
+          <Property Name="sp_avbqty" Type="int" />
+          <Property Name="sp_image" Type="varchar(max)" />
+          <Property Name="sp_size" Type="varchar" MaxLength="50" />
+          <Property Name="sp_price" Type="int" />
+        </EntityType>
+        <EntityType Name="Unstich_Product_Orders">
+          <Key>
+            <PropertyRef Name="uspo_id" />
+          </Key>
+          <Property Name="uspo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usp_id" Type="int" />
+          <Property Name="uspo_length" Type="int" />
+          <Property Name="uspo_width" Type="int" />
+          <Property Name="uspo_shoulder_len" Type="int" />
+          <Property Name="uspo_sleeve_len" Type="int" />
+          <Property Name="uspo_collor" Type="int" />
+          <Property Name="uspo_full_len" Type="int" />
+          <Property Name="uspo_chest" Type="int" />
+          <Property Name="uspo_bottom" Type="int" />
+          <Property Name="uspo_ankle_len" Type="int" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="gm_id" Type="int" />
+          <Property Name="uspo_req_status" Type="int" />
+          <Property Name="uspo_ds_id" Type="int" />
+          <Property Name="uspo_date" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Unstich_Products">
+          <Key>
+            <PropertyRef Name="usp_id" />
+          </Key>
+          <Property Name="usp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usp_name" Type="varchar" MaxLength="50" />
+          <Property Name="usp_size" Type="int" />
+          <Property Name="usp_category" Type="varchar" MaxLength="50" />
+          <Property Name="usp_description" Type="varchar" MaxLength="250" />
+          <Property Name="usp_avbqty" Type="int" />
+          <Property Name="usp_image" Type="varchar(max)" />
+          <Property Name="usp_price" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_name" Type="varchar" MaxLength="50" />
+          <Property Name="user_email" Type="varchar" MaxLength="50" />
+          <Property Name="user_password" Type="varchar" MaxLength="50" />
+          <Property Name="user_type" Type="int" />
+          <Property Name="user_status" Type="int" />
+        </EntityType>
+        <EntityContainer Name="OnlineBoutiqueModelStoreContainer">
+          <EntitySet Name="Carts" EntityType="Self.Carts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Designers" EntityType="Self.Designers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Group_Members" EntityType="Self.Group_Members" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product_Orders" EntityType="Self.Product_Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Recomended_Products" EntityType="Self.Recomended_Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stich_Product_Orders" EntityType="Self.Stich_Product_Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stich_Products" EntityType="Self.Stich_Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Unstich_Product_Orders" EntityType="Self.Unstich_Product_Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Unstich_Products" EntityType="Self.Unstich_Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OnlineBoutiqueModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="c_id" />
+          </Key>
+          <Property Name="c_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="sp_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Designer">
+          <Key>
+            <PropertyRef Name="ds_id" />
+          </Key>
+          <Property Name="ds_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="ds_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ds_category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ds_rating" Type="Int32" />
+          <Property Name="ds_feedback" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Group_Members">
+          <Key>
+            <PropertyRef Name="gm_id" />
+          </Key>
+          <Property Name="gm_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="g_id" Type="Int32" />
+          <Property Name="gm_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gm_gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gm_agegroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gm_length" Type="Int32" />
+          <Property Name="gm_width" Type="Int32" />
+          <Property Name="gm_shoulder_len" Type="Int32" />
+          <Property Name="gm_sleeve_len" Type="Int32" />
+          <Property Name="gm_collor" Type="Int32" />
+          <Property Name="gm_full_len" Type="Int32" />
+          <Property Name="gm_chest" Type="Int32" />
+          <Property Name="gm_bottom" Type="Int32" />
+          <Property Name="gm_ankle_len" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="g_id" />
+          </Key>
+          <Property Name="g_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="g_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="g_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Product_Orders">
+          <Key>
+            <PropertyRef Name="po_id" />
+          </Key>
+          <Property Name="po_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contactno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="zipcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="p_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="p_category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="p_description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="p_qty" Type="Int32" />
+          <Property Name="p_size" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="p_price" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Recomended_Products">
+          <Key>
+            <PropertyRef Name="rp_id" />
+          </Key>
+          <Property Name="rp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="po_id" Type="Int32" />
+          <Property Name="f_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Stich_Product_Orders">
+          <Key>
+            <PropertyRef Name="spo_id" />
+          </Key>
+          <Property Name="spo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sp_id" Type="Int32" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="spo_fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="spo_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="spo_contactno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="spo_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="spo_city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="spo_zipcode" Type="Int32" />
+          <Property Name="spo_reqstatus" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Stich_Products">
+          <Key>
+            <PropertyRef Name="sp_id" />
+          </Key>
+          <Property Name="sp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sp_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sp_category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sp_description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sp_avbqty" Type="Int32" />
+          <Property Name="sp_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sp_size" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sp_price" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Unstich_Product_Orders">
+          <Key>
+            <PropertyRef Name="uspo_id" />
+          </Key>
+          <Property Name="uspo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usp_id" Type="Int32" />
+          <Property Name="uspo_length" Type="Int32" />
+          <Property Name="uspo_width" Type="Int32" />
+          <Property Name="uspo_shoulder_len" Type="Int32" />
+          <Property Name="uspo_sleeve_len" Type="Int32" />
+          <Property Name="uspo_collor" Type="Int32" />
+          <Property Name="uspo_full_len" Type="Int32" />
+          <Property Name="uspo_chest" Type="Int32" />
+          <Property Name="uspo_bottom" Type="Int32" />
+          <Property Name="uspo_ankle_len" Type="Int32" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="gm_id" Type="Int32" />
+          <Property Name="uspo_req_status" Type="Int32" />
+          <Property Name="uspo_ds_id" Type="Int32" />
+          <Property Name="uspo_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Unstich_Products">
+          <Key>
+            <PropertyRef Name="usp_id" />
+          </Key>
+          <Property Name="usp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usp_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usp_size" Type="Int32" />
+          <Property Name="usp_category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usp_description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="usp_avbqty" Type="Int32" />
+          <Property Name="usp_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="usp_price" Type="Int32" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_type" Type="Int32" />
+          <Property Name="user_status" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="OnlineBoutiqueEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Carts" EntityType="Self.Cart" />
+          <EntitySet Name="Designers" EntityType="Self.Designer" />
+          <EntitySet Name="Group_Members" EntityType="Self.Group_Members" />
+          <EntitySet Name="Groups" EntityType="Self.Group" />
+          <EntitySet Name="Product_Orders" EntityType="Self.Product_Orders" />
+          <EntitySet Name="Recomended_Products" EntityType="Self.Recomended_Products" />
+          <EntitySet Name="Stich_Product_Orders" EntityType="Self.Stich_Product_Orders" />
+          <EntitySet Name="Stich_Products" EntityType="Self.Stich_Products" />
+          <EntitySet Name="Unstich_Product_Orders" EntityType="Self.Unstich_Product_Orders" />
+          <EntitySet Name="Unstich_Products" EntityType="Self.Unstich_Products" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OnlineBoutiqueModelStoreContainer" CdmEntityContainer="OnlineBoutiqueEntities2">
+          <EntitySetMapping Name="Carts">
+            <EntityTypeMapping TypeName="OnlineBoutiqueModel.Cart">
+              <MappingFragment StoreEntitySet="Carts">
+                <ScalarProperty Name="c_id" ColumnName="c_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="sp_id" ColumnName="sp_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Designers">
+            <EntityTypeMapping TypeName="OnlineBoutiqueModel.Designer">
+              <MappingFragment StoreEntitySet="Designers">
+                <ScalarProperty Name="ds_id" ColumnName="ds_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="ds_name" ColumnName="ds_name" />
+                <ScalarProperty Name="ds_category" ColumnName="ds_category" />
+                <ScalarProperty Name="ds_rating" ColumnName="ds_rating" />
+                <ScalarProperty Name="ds_feedback" ColumnName="ds_feedback" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Group_Members">
+            <EntityTypeMapping TypeName="OnlineBoutiqueModel.Group_Members">
+              <MappingFragment StoreEntitySet="Group_Members">
+                <ScalarProperty Name="gm_id" ColumnName="gm_id" />
+                <ScalarProperty Name="g_id" ColumnName="g_id" />
+                <ScalarProperty Name="gm_name" ColumnName="gm_name" />
+                <ScalarProperty Name="gm_gender" ColumnName="gm_gender" />
+                <ScalarProperty Name="gm_agegroup" ColumnName="gm_agegroup" />
+                <ScalarProperty Name="gm_length" ColumnName="gm_length" />
+                <ScalarProperty Name="gm_width" ColumnName="gm_width" />
+                <ScalarProperty Name="gm_shoulder_len" ColumnName="gm_shoulder_len" />
+                <ScalarProperty Name="gm_sleeve_len" ColumnName="gm_sleeve_len" />
+                <ScalarProperty Name="gm_collor" ColumnName="gm_collor" />
+                <ScalarProperty Name="gm_full_len" ColumnName="gm_full_len" />
+                <ScalarProperty Name="gm_chest" ColumnName="gm_chest" />
+                <ScalarProperty Name="gm_bottom" ColumnName="gm_bottom" />
+                <ScalarProperty Name="gm_ankle_len" ColumnName="gm_ankle_len" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="OnlineBoutiqueModel.Group">
+              <MappingFragment StoreEntitySet="Groups">
+                <ScalarProperty Name="g_id" ColumnName="g_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="g_name" ColumnName="g_name" />
+                <ScalarProperty Name="g_type" ColumnName="g_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_Orders">
+            <EntityTypeMapping TypeName="OnlineBoutiqueModel.Product_Orders">
+              <MappingFragment StoreEntitySet="Product_Orders">
+                <ScalarProperty Name="po_id" ColumnName="po_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="contactno" ColumnName="contactno" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+                <ScalarProperty Name="p_name" ColumnName="p_name" />
+                <ScalarProperty Name="p_category" ColumnName="p_category" />
+                <ScalarProperty Name="p_description" ColumnName="p_description" />
+                <ScalarProperty Name="p_qty" ColumnName="p_qty" />
+                <ScalarProperty Name="p_size" ColumnName="p_size" />
+                <ScalarProperty Name="p_price" ColumnName="p_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recomended_Products">
+            <EntityTypeMapping TypeName="OnlineBoutiqueModel.Recomended_Products">
+              <MappingFragment StoreEntitySet="Recomended_Products">
+                <ScalarProperty Name="rp_id" ColumnName="rp_id" />
+                <ScalarProperty Name="po_id" ColumnName="po_id" />
+                <ScalarProperty Name="f_email" ColumnName="f_email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stich_Product_Orders">
+            <EntityTypeMapping TypeName="OnlineBoutiqueModel.Stich_Product_Orders">
+              <MappingFragment StoreEntitySet="Stich_Product_Orders">
+                <ScalarProperty Name="spo_id" ColumnName="spo_id" />
+                <ScalarProperty Name="sp_id" ColumnName="sp_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="spo_fullname" ColumnName="spo_fullname" />
+                <ScalarProperty Name="spo_date" ColumnName="spo_date" />
+                <ScalarProperty Name="spo_contactno" ColumnName="spo_contactno" />
+                <ScalarProperty Name="spo_address" ColumnName="spo_address" />
+                <ScalarProperty Name="spo_city" ColumnName="spo_city" />
+                <ScalarProperty Name="spo_zipcode" ColumnName="spo_zipcode" />
+                <ScalarProperty Name="spo_reqstatus" ColumnName="spo_reqstatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stich_Products">
+            <EntityTypeMapping TypeName="OnlineBoutiqueModel.Stich_Products">
+              <MappingFragment StoreEntitySet="Stich_Products">
+                <ScalarProperty Name="sp_id" ColumnName="sp_id" />
+                <ScalarProperty Name="sp_name" ColumnName="sp_name" />
+                <ScalarProperty Name="sp_category" ColumnName="sp_category" />
+                <ScalarProperty Name="sp_description" ColumnName="sp_description" />
+                <ScalarProperty Name="sp_avbqty" ColumnName="sp_avbqty" />
+                <ScalarProperty Name="sp_image" ColumnName="sp_image" />
+                <ScalarProperty Name="sp_size" ColumnName="sp_size" />
+                <ScalarProperty Name="sp_price" ColumnName="sp_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Unstich_Product_Orders">
+            <EntityTypeMapping TypeName="OnlineBoutiqueModel.Unstich_Product_Orders">
+              <MappingFragment StoreEntitySet="Unstich_Product_Orders">
+                <ScalarProperty Name="uspo_id" ColumnName="uspo_id" />
+                <ScalarProperty Name="usp_id" ColumnName="usp_id" />
+                <ScalarProperty Name="uspo_length" ColumnName="uspo_length" />
+                <ScalarProperty Name="uspo_width" ColumnName="uspo_width" />
+                <ScalarProperty Name="uspo_shoulder_len" ColumnName="uspo_shoulder_len" />
+                <ScalarProperty Name="uspo_sleeve_len" ColumnName="uspo_sleeve_len" />
+                <ScalarProperty Name="uspo_collor" ColumnName="uspo_collor" />
+                <ScalarProperty Name="uspo_full_len" ColumnName="uspo_full_len" />
+                <ScalarProperty Name="uspo_chest" ColumnName="uspo_chest" />
+                <ScalarProperty Name="uspo_bottom" ColumnName="uspo_bottom" />
+                <ScalarProperty Name="uspo_ankle_len" ColumnName="uspo_ankle_len" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="gm_id" ColumnName="gm_id" />
+                <ScalarProperty Name="uspo_req_status" ColumnName="uspo_req_status" />
+                <ScalarProperty Name="uspo_ds_id" ColumnName="uspo_ds_id" />
+                <ScalarProperty Name="uspo_date" ColumnName="uspo_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Unstich_Products">
+            <EntityTypeMapping TypeName="OnlineBoutiqueModel.Unstich_Products">
+              <MappingFragment StoreEntitySet="Unstich_Products">
+                <ScalarProperty Name="usp_id" ColumnName="usp_id" />
+                <ScalarProperty Name="usp_name" ColumnName="usp_name" />
+                <ScalarProperty Name="usp_size" ColumnName="usp_size" />
+                <ScalarProperty Name="usp_category" ColumnName="usp_category" />
+                <ScalarProperty Name="usp_description" ColumnName="usp_description" />
+                <ScalarProperty Name="usp_avbqty" ColumnName="usp_avbqty" />
+                <ScalarProperty Name="usp_image" ColumnName="usp_image" />
+                <ScalarProperty Name="usp_price" ColumnName="usp_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="OnlineBoutiqueModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="user_email" ColumnName="user_email" />
+                <ScalarProperty Name="user_password" ColumnName="user_password" />
+                <ScalarProperty Name="user_type" ColumnName="user_type" />
+                <ScalarProperty Name="user_status" ColumnName="user_status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

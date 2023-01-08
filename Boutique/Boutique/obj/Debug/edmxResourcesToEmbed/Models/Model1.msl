@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OnlineBoutiqueModelStoreContainer" CdmEntityContainer="OnlineBoutiqueEntities2">
+    <EntitySetMapping Name="Carts">
+      <EntityTypeMapping TypeName="OnlineBoutiqueModel.Cart">
+        <MappingFragment StoreEntitySet="Carts">
+          <ScalarProperty Name="c_id" ColumnName="c_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="sp_id" ColumnName="sp_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Designers">
+      <EntityTypeMapping TypeName="OnlineBoutiqueModel.Designer">
+        <MappingFragment StoreEntitySet="Designers">
+          <ScalarProperty Name="ds_id" ColumnName="ds_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="ds_name" ColumnName="ds_name" />
+          <ScalarProperty Name="ds_category" ColumnName="ds_category" />
+          <ScalarProperty Name="ds_rating" ColumnName="ds_rating" />
+          <ScalarProperty Name="ds_feedback" ColumnName="ds_feedback" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group_Members">
+      <EntityTypeMapping TypeName="OnlineBoutiqueModel.Group_Members">
+        <MappingFragment StoreEntitySet="Group_Members">
+          <ScalarProperty Name="gm_id" ColumnName="gm_id" />
+          <ScalarProperty Name="g_id" ColumnName="g_id" />
+          <ScalarProperty Name="gm_name" ColumnName="gm_name" />
+          <ScalarProperty Name="gm_gender" ColumnName="gm_gender" />
+          <ScalarProperty Name="gm_agegroup" ColumnName="gm_agegroup" />
+          <ScalarProperty Name="gm_length" ColumnName="gm_length" />
+          <ScalarProperty Name="gm_width" ColumnName="gm_width" />
+          <ScalarProperty Name="gm_shoulder_len" ColumnName="gm_shoulder_len" />
+          <ScalarProperty Name="gm_sleeve_len" ColumnName="gm_sleeve_len" />
+          <ScalarProperty Name="gm_collor" ColumnName="gm_collor" />
+          <ScalarProperty Name="gm_full_len" ColumnName="gm_full_len" />
+          <ScalarProperty Name="gm_chest" ColumnName="gm_chest" />
+          <ScalarProperty Name="gm_bottom" ColumnName="gm_bottom" />
+          <ScalarProperty Name="gm_ankle_len" ColumnName="gm_ankle_len" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="OnlineBoutiqueModel.Group">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="g_id" ColumnName="g_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="g_name" ColumnName="g_name" />
+          <ScalarProperty Name="g_type" ColumnName="g_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_Orders">
+      <EntityTypeMapping TypeName="OnlineBoutiqueModel.Product_Orders">
+        <MappingFragment StoreEntitySet="Product_Orders">
+          <ScalarProperty Name="po_id" ColumnName="po_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="contactno" ColumnName="contactno" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="p_category" ColumnName="p_category" />
+          <ScalarProperty Name="p_description" ColumnName="p_description" />
+          <ScalarProperty Name="p_qty" ColumnName="p_qty" />
+          <ScalarProperty Name="p_size" ColumnName="p_size" />
+          <ScalarProperty Name="p_price" ColumnName="p_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recomended_Products">
+      <EntityTypeMapping TypeName="OnlineBoutiqueModel.Recomended_Products">
+        <MappingFragment StoreEntitySet="Recomended_Products">
+          <ScalarProperty Name="rp_id" ColumnName="rp_id" />
+          <ScalarProperty Name="po_id" ColumnName="po_id" />
+          <ScalarProperty Name="f_email" ColumnName="f_email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stich_Product_Orders">
+      <EntityTypeMapping TypeName="OnlineBoutiqueModel.Stich_Product_Orders">
+        <MappingFragment StoreEntitySet="Stich_Product_Orders">
+          <ScalarProperty Name="spo_id" ColumnName="spo_id" />
+          <ScalarProperty Name="sp_id" ColumnName="sp_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="spo_fullname" ColumnName="spo_fullname" />
+          <ScalarProperty Name="spo_date" ColumnName="spo_date" />
+          <ScalarProperty Name="spo_contactno" ColumnName="spo_contactno" />
+          <ScalarProperty Name="spo_address" ColumnName="spo_address" />
+          <ScalarProperty Name="spo_city" ColumnName="spo_city" />
+          <ScalarProperty Name="spo_zipcode" ColumnName="spo_zipcode" />
+          <ScalarProperty Name="spo_reqstatus" ColumnName="spo_reqstatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stich_Products">
+      <EntityTypeMapping TypeName="OnlineBoutiqueModel.Stich_Products">
+        <MappingFragment StoreEntitySet="Stich_Products">
+          <ScalarProperty Name="sp_id" ColumnName="sp_id" />
+          <ScalarProperty Name="sp_name" ColumnName="sp_name" />
+          <ScalarProperty Name="sp_category" ColumnName="sp_category" />
+          <ScalarProperty Name="sp_description" ColumnName="sp_description" />
+          <ScalarProperty Name="sp_avbqty" ColumnName="sp_avbqty" />
+          <ScalarProperty Name="sp_image" ColumnName="sp_image" />
+          <ScalarProperty Name="sp_size" ColumnName="sp_size" />
+          <ScalarProperty Name="sp_price" ColumnName="sp_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Unstich_Product_Orders">
+      <EntityTypeMapping TypeName="OnlineBoutiqueModel.Unstich_Product_Orders">
+        <MappingFragment StoreEntitySet="Unstich_Product_Orders">
+          <ScalarProperty Name="uspo_id" ColumnName="uspo_id" />
+          <ScalarProperty Name="usp_id" ColumnName="usp_id" />
+          <ScalarProperty Name="uspo_length" ColumnName="uspo_length" />
+          <ScalarProperty Name="uspo_width" ColumnName="uspo_width" />
+          <ScalarProperty Name="uspo_shoulder_len" ColumnName="uspo_shoulder_len" />
+          <ScalarProperty Name="uspo_sleeve_len" ColumnName="uspo_sleeve_len" />
+          <ScalarProperty Name="uspo_collor" ColumnName="uspo_collor" />
+          <ScalarProperty Name="uspo_full_len" ColumnName="uspo_full_len" />
+          <ScalarProperty Name="uspo_chest" ColumnName="uspo_chest" />
+          <ScalarProperty Name="uspo_bottom" ColumnName="uspo_bottom" />
+          <ScalarProperty Name="uspo_ankle_len" ColumnName="uspo_ankle_len" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="gm_id" ColumnName="gm_id" />
+          <ScalarProperty Name="uspo_req_status" ColumnName="uspo_req_status" />
+          <ScalarProperty Name="uspo_ds_id" ColumnName="uspo_ds_id" />
+          <ScalarProperty Name="uspo_date" ColumnName="uspo_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Unstich_Products">
+      <EntityTypeMapping TypeName="OnlineBoutiqueModel.Unstich_Products">
+        <MappingFragment StoreEntitySet="Unstich_Products">
+          <ScalarProperty Name="usp_id" ColumnName="usp_id" />
+          <ScalarProperty Name="usp_name" ColumnName="usp_name" />
+          <ScalarProperty Name="usp_size" ColumnName="usp_size" />
+          <ScalarProperty Name="usp_category" ColumnName="usp_category" />
+          <ScalarProperty Name="usp_description" ColumnName="usp_description" />
+          <ScalarProperty Name="usp_avbqty" ColumnName="usp_avbqty" />
+          <ScalarProperty Name="usp_image" ColumnName="usp_image" />
+          <ScalarProperty Name="usp_price" ColumnName="usp_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="OnlineBoutiqueModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_email" ColumnName="user_email" />
+          <ScalarProperty Name="user_password" ColumnName="user_password" />
+          <ScalarProperty Name="user_type" ColumnName="user_type" />
+          <ScalarProperty Name="user_status" ColumnName="user_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
